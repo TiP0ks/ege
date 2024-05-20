@@ -1,0 +1,12 @@
+x= open('1.txt')
+s=[int(s) for s in x]
+b=[hex(s)[2:] for s in s]
+c=[]
+k=[]
+for i in range(len(b)-1):
+    if b[i][-1]=='b':
+        c.append(b[i])
+for n in range(len(c)-1):
+    if int(c[n],16)%7==0 and int(c[n],16)%6!=0 and int(c[n],16)%13!=0 and int(c[n],16)%19!=0:
+        k.append(int(c[n],16))
+print(sum(k),len(k))
