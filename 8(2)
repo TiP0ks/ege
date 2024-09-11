@@ -1,0 +1,21 @@
+#7444
+p=0
+p1=""
+for i in product("01234567",repeat=6):
+    s="".join(i)
+    if s[0]!="0":
+        if (s.count("4") == 2) and (not "44" in s):
+            if s.count("0")<=1 and s.count("1")<=1 and s.count("2")<=1 and s.count("3")<=1 and s.count("5")<=1 and s.count("6")<=1 and s.count("7")<=1:
+                for qw in "567":
+                    if s.count(f"4{qw}4") >= 1:
+                        p+=1
+                for x in product("567",repeat=3):
+                    x1="".join(x)
+                    if s.count(f"4{x1}4")>=1:
+                        p+=1
+                for x2 in product("567",repeat=2):
+                    x3="".join(x2)
+                    if s.count(f"4{x3}4") >= 1:
+                        p+=1
+
+print(p)
