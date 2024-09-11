@@ -1,0 +1,11 @@
+Задание №8 (1216)
+
+
+from itertools import *
+k=0
+for i in product("01234",repeat=6):
+    s="".join(i)
+    if s[0]!="0":
+        if (s[5]!="3") and (s[5]!="4") and s[0]!= "1":
+            k+=1
+print(k)
