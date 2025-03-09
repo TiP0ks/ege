@@ -1,0 +1,42 @@
+f = open("26_18028.txt")
+k = int(f.readline())
+n = int(f.readline())
+data = [list(map(int,x.split())) for x in f]
+data.sort()
+l = [0 for i in range(k)]
+c = p = 0
+for t in range(1440*5+1, 1440*6+1):
+    for i in range(k):
+        if l[i]==t:
+            l[i]=0
+    for i in data:
+        if i[0]==t:
+            for j in range(k):
+                if l[j]==0:
+                    l[j]= i[1]
+                    c+=1
+                    p = j + 1
+                    break
+print(c,p)
+#Как реализовать условие, если человек пришел, когда все занято, но при этом ждет 10 минут и после этого уходит
+
+# f = open("26_7276.txt")
+# l, n = map(int,f.readline().split())
+# a=[]
+# for i in f:
+#     x, y = map(int, i.split())
+#     a.append([x,y])
+# a.sort()
+# s = 0
+#
+# b=[a[0]]
+# c=[]
+# for j in a:
+#     if j[1] < b[-1][1]:
+#         b[-1]=j
+#     if j[0]>=b[-1][1]:
+#         b.append(j)
+# for i in b:
+#     if not i in c:
+#         c.append(i)
+# print(len(c),c[-1][0])
